@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=DM+Sans:wght@300;400;500&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f7f4ef;
+  --surface: #ffffff;
+  --accent: #c9785a;
+  --text: #1e1b18;
+  --muted: #9e9790;
+  --border: #e5e0d8;
+  --done-color: #b0a99f;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: "DM Sans", sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 60px 16px;
+}
+
+#root {
+  width: 100%;
+  max-width: 480px;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  color: var(--text);
+  margin-bottom: 32px;
+}
+
+/* Input */
+input[type="text"],
+input:not([type="checkbox"]) {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--text);
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:not([type="checkbox"]):focus {
+  border-color: var(--accent);
+}
+
+input::placeholder {
+  color: var(--muted);
+}
+
+/* Button */
+button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition:
+    opacity 0.2s,
+    transform 0.1s;
+}
+
+button:hover {
+  opacity: 0.88;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Task list */
+ul {
+  list-style: none;
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: opacity 0.2s;
+}
+
+li[style*="line-through"] {
+  opacity: 0.5;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+
+input[type="checkbox"]:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.add-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition:
+    opacity 0.2s,
+    transform 0.1s;
+}
+
+.add-btn:hover {
+  opacity: 0.88;
+}
+.add-btn:active {
+  transform: scale(0.98);
+}
+.delete-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.2s;
+  width: auto; /* override global button width */
+  margin-top: 0; /* override global button margin */
+}
+
+.delete-btn:hover {
+  background: #fde8e8;
+}
